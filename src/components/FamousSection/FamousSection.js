@@ -6,24 +6,6 @@ function FamousSection() {
   let [famousPersonName, handleChangeForName] = useState("");
   let [famousPersonRole, handleChangeForRole] = useState("");
 
-
-  // state = {
-  //   famousPerson: {
-  //     name: '',
-  //     role: '',
-  //   }
-  // }
-
-
-  // handleChangeFor = (event, propertyName) => {
-  //   this.setState({
-  //     famousPerson: {
-  //       ...this.state.famousPerson,
-  //       [propertyName]: event.target.value,
-  //     }
-  //   })
-  // }
-
   const addPerson = (evt) => {
     evt.preventDefault();
     console.log( `The person is ${famousPersonName} and they're famous for ${famousPersonRole}` );
