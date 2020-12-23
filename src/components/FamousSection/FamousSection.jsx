@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './FamousSection.css';
 
 function FamousSection() {
-  let [famousPerson, setPerson] = useState({name:"", role:""});
+  let [famousPerson, setPerson] = useState({name:'', role:''});
 
   const addPerson = (evt) => {
     evt.preventDefault();
