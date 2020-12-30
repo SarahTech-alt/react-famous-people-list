@@ -6,9 +6,12 @@ The server side code and routes have been provided for you. You shouldn't have t
 
 Please create a database called `famous_people` and use the `database.sql` file to help you spin it up.
 
-```npm install```
-```npm run server```
-```npm run client```
+```npm install``` 
+
+```npm run server``` 
+
+```npm run client``` 
+
 
 
 ## Required Features
