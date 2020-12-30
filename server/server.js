@@ -5,7 +5,7 @@ const peopleRouter = require('./routes/people.router.js');
 const PORT = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
