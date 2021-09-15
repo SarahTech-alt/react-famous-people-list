@@ -6,14 +6,15 @@ function FamousSection() {
   let [famousPersonName, setPersonName] = useState('');
   let [famousPersonRole, setPersonRole] = useState('');
   let [famousPeopleArray, setPeopleArray] = useState([]);
-  let [famousNameInput, setFamousNameInput] = useState('');
-  let [famousRoleInput, setFamousRoleInput] = useState('');
+
 
   // On Load, do this thing
   useEffect(() => {
     console.log('in useEffect')
     fetchPeople();
   }, []);
+
+
 
   // GET request
   const fetchPeople = () => {
@@ -24,28 +25,32 @@ function FamousSection() {
     })
   }
 
+
+
   const addPerson = (evt) => {
     evt.preventDefault();
     console.log(`The person is ${famousPersonName} and they're famous for ${famousPersonRole}`);
+    // creating variable with key and values to send
+    // as data to the server
     const FamousPerson = {
       name: famousPersonName,
       role: famousPersonRole
     };
+    // send a post request to add to database
+    // log the response message from the client
+    // send to fetchPeople to get updated database info
     axios.post('/people', FamousPerson).then(response =>
-      {setPeopleArray(response)
+      {console.log(response);
+        fetchPeople();
       }).catch((error) => {
         console.log('there was an error', error);
       })
-    // create POST request to add this new person to the database
-
-    // HINT: you will have to create a new object containing the famousPersonName and famousPersonRole values
-    // the keys should be 'name' and 'role'
 
   }
 
   return (
     <section className="new-person-section">
-      <form onSubmit={addPerson}>
+      <form>
         <label htmlFor="name-input">Name:</label>
         <input id="name-input" onChange={e => setPersonName(e.target.value)} />
         <label htmlFor="role-input">Famous for:</label>

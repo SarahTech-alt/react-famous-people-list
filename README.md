@@ -15,10 +15,9 @@ Please create a database called `famous_people` and use the `database.sql` file 
 
 ## Tasks
 - [x] Add famous people to array from GET request response in FamousSection.jsx
-- [ ] Add click event for submit button call a POST request function
-    -[ ] Add POST on client side
-    -[ ] Add POST on server side
-- [ ] Display POST response on the DOM
+- [x] Add click event for submit button call a POST request function
+    -[x] Add POST on client side
+- [x] Display POST response on the DOM
 - [ ] Clear input fields
 
 
