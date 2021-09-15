@@ -17,9 +17,8 @@ function FamousSection() {
   const fetchPeople = () => {
     axios.get('/people').then((response) => {
       console.log('this is the response from fetchPeople', response.data);
-
+      setPeopleArray(response.data);
       // take the data from the response and assign it to the famousPeopleArray
-
     })
   }
 
@@ -47,7 +46,8 @@ function FamousSection() {
           {famousPersonName} is famous for "{famousPersonRole}".
         </p>
         <ul>
-          {/* The list should go here. */}
+         {famousPeopleArray.map(person =>
+          (<li key={person.name, person.role}> {person.name} as "{person.role}"</li>))}
         </ul>
       </section>
     );
